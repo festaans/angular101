@@ -1,4 +1,4 @@
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /
   $urlRouterProvider.otherwise("/");
