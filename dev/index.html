@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <title>My AngularJS App</title>
+ <meta name="description" content="">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li ui-sref="inputs">INPUTS</li>
+      <li ui-sref="view1">View1</li>
+      <li ui-sref="view2">View2</li>
+    </ul>
+  </nav>
+  <div class="view-container">
+    <div ui-view></div>
+  </div>
+
+ <script src="bower_components/angular/angular.min.js"></script>
+ <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+ <script>
+//app config
+  var app = angular.module('myApp',[
+    'ui.router'
+  ]);
+//config
+  app.config(function($stateProvider, $urlRouterProvider) {
+    //
+    // For any unmatched url, redirect to /
+    $urlRouterProvider.otherwise("/");
+    //
+    // Now set up the states
+    $stateProvider
+      .state('inputs', {
+        url: "/",
+        templateUrl: "components/views/inputs/inputs.html",
+        controller: "inputsController"
+      })
+      .state('view1', {
+        url: "/view1",
+        templateUrl: "components/views/view1/view1.html",
+        controller: "view1Controller"
+      })
+      .state('view2', {
+        url: "/view2",
+        templateUrl: "components/views/view2/view2.html",
+        controller: "view2Controller"
+      });
+  });
+
+//factories
+  app.factory('message', function() {
+    return {
+          body : "This is the default message",
+          tag : ["#hello", "#angular"]
+    };
+  });
+//controllers
+  app.controller('inputsController',['$scope', 'message', function($scope, message) {
+    $scope.inputMessage = message;
+  }]);
+  app.controller('view1Controller',['$scope', 'message', function($scope, message) {
+    $scope.viewHeading = "one";
+    $scope.message = message;
+  }]);
+  app.controller('view2Controller',['$scope', 'message', function($scope, message) {
+    $scope.viewHeading = "two";
+    $scope.message = message;
+  }]);
+ </script>
+</body>
+</html>
