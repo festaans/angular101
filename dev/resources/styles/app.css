@@ -5,3 +5,11 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0; }
+
+.button_text {
+  height: 100px; }
+
+.md-toolbar-tools h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: inherit; }
