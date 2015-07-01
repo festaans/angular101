@@ -6,7 +6,7 @@
   "dependencies": {
     "bower": "^1.4.1",
     "express": "^4.13.0",
-    "gulp": "^3.9.0"
+    "gulp": "^3.3.4"
   },
   "devDependencies": {
     "gulp-cdnizer": "^1.1.6",
