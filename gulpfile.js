@@ -36,7 +36,7 @@ gulp.task('watchDev', function () {
   gulp.watch(['./dev/**/*.controller.js'], ['createAppJS']);
   gulp.watch(['./dev/**/*.factory.js'], ['createAppJS']);
   gulp.watch(['./dev/**/*.state.js'], ['createAppJS']);
-  gulp.watch(['./dev/**/*.html'], ['reload']);
+  gulp.watch(['./dev/**/*.html'], ['reloadDev']);
 
   //gulp.watch(['./development/assets/javascript/**/*.js'], ['concat-scripts']);
   //gulp.watch(['./development/assets/images/**/*.{png,jpg,jpeg,gif}'], ['images']);
