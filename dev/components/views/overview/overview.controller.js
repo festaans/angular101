@@ -1,3 +1,3 @@
-app.controller('overviewController',['$scope', 'message', function($scope, message) {
-  
+app.controller('overviewController',['$scope', 'loadUser', 'loadArticles', function($scope, loadUser, loadArticles) {
+
 }]);
