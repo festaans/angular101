@@ -1,7 +1,7 @@
 $primary-color: #cfcfcf;
 $base-border-radius: 4px;
 $large-border-radius: ($base-border-radius * 1.5);
-
+@import "stephanus.scss";
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 html, body {
   font-family: 'Roboto', sans-serif;

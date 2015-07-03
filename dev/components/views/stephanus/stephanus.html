@@ -1,0 +1,65 @@
+<div class="side-panel">
+  <div class="brand-box">
+    <i class="icon ion-pizza"></i><span>Pizza Fat</span>
+  </div>
+  <div class="menu-item"><i class="icon ion-ios-speedometer-outline"></i><span>Overview</span></div>
+  <div class="menu-item"><i class="icon ion-arrow-graph-up-right"></i><span>Sales</span></div>
+  <div class="menu-item"><i class="icon ion-bag"></i><span>Supplies</span></div>
+  <div class="menu-item active"><i class="icon ion-ios-paper"></i><span>News</span></div>
+  <div class="menu-item"><i class="icon ion-calendar"></i><span>Calendar</span></div>
+</div>
+<div class="content-panel">
+  <div class="top-bar">
+    <div class="search">
+      <i class="icon ion-ios-search"></i>
+      <span>Search</span>
+    </div>
+    <div class="profile-box">
+
+      {{user.name}} {{user.surname}}
+      <i class="icon ion-gear-a"></i>
+      <i class="icon ion-ios-bell">
+        <span class="notificationCounter">{{user.notificationCounter}}</span>
+      </i>
+    </div>
+  </div>
+  <div class="content-view">
+    <div class="article-filters">
+      <h1>News</h1>
+      <div class="filter-selector">
+        <span class="tag">Sort by location</span>
+        <div class="selected-filter">Worldwide
+        <i class="icon ion-arrow-down-b"></i>
+        </div>
+      </div>
+      <div class="filter-selector">
+        <span class="tag">Sort by time</span>
+        <div class="selected-filter">Last 24 hours
+        <i class="icon ion-arrow-down-b"></i>
+        </div>
+      </div>
+      <div class="filter-selector">
+        <span class="tag">Proximity</span>
+        <div class="selected-filter">Direct Mentions
+        <i class="icon ion-arrow-down-b"></i>
+        </div>
+      </div>
+      <div class="layout">
+        <i class="icon ion-android-apps"></i>
+        <i class="icon ion-android-menu"></i>
+      </div>
+    </div>
+    <div class="article-container">
+      <div class="article" ng-repeat="article in articles" ng-class="isFeatured(article.featuredImage)">
+        <div class="titleArea" style="background-image: url({{article.featuredImage}});">
+          <span>{{article.category}}</span>
+          <h2 class="title">{{article.title}}</h2>
+        </div>
+        <div class="excerpt">
+          <strong>{{article.length}} -</strong> {{article.excerpt}}
+          <a class="readMore">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

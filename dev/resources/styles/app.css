@@ -1,4 +1,244 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+.view-container {
+  min-height: 100%;
+  width: 100%; }
+
+.side-panel {
+  position: fixed;
+  width: 250px;
+  min-height: 100%;
+  box-shadow: 10px 0px 10px -10px rgba(0, 0, 0, 0.2); }
+  .side-panel .brand-box {
+    background-color: #FCBB53;
+    height: 40px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 40px;
+    padding: 20px; }
+    .side-panel .brand-box span {
+      margin-left: 10px;
+      line-height: 40px;
+      display: inline-block; }
+    .side-panel .brand-box i {
+      font-size: 40px;
+      transform: rotateZ(-23deg);
+      display: inline-block; }
+  .side-panel .menu-item {
+    padding: 20px;
+    border-bottom: 2px solid #F0EFEF;
+    text-transform: uppercase;
+    font-weight: 700;
+    z-index: 99;
+    position: relative;
+    background-color: #fff;
+    color: #393D40; }
+    .side-panel .menu-item.active {
+      color: #FCBB53;
+      position: relative; }
+    .side-panel .menu-item.active::before, .side-panel .menu-item.active::after {
+      content: "";
+      background: trasparent;
+      position: absolute;
+      transform: rotate(45deg);
+      background-color: #fff; }
+    .side-panel .menu-item.active::before {
+      box-shadow: 2px -2px 4px 0px rgba(0, 0, 0, 0.1);
+      right: -8px;
+      width: 16px;
+      height: 16px;
+      top: 42px; }
+    .side-panel .menu-item.active::after {
+      right: -6px;
+      width: 20px;
+      height: 20px;
+      top: 40px; }
+    .side-panel .menu-item span {
+      display: inline-block;
+      font-size: 15px;
+      line-height: 60px;
+      margin-left: 15px; }
+    .side-panel .menu-item i {
+      font-size: 26px;
+      line-height: 60px;
+      display: inline-block; }
+
+.content-panel {
+  width: 100%;
+  min-height: 100%; }
+
+.top-bar {
+  background-color: #393D40;
+  color: #fff;
+  height: 40px;
+  margin-left: 250px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 20px;
+  line-height: 40px; }
+  .top-bar .search i {
+    font-size: 24px;
+    border-right: 1px solid #fff;
+    padding-right: 15px; }
+  .top-bar .search span {
+    padding-left: 15px; }
+  .top-bar .profile-box {
+    background-color: #1E2327;
+    height: 40px;
+    width: 340px;
+    top: 0px;
+    right: 250px;
+    position: absolute;
+    padding: 20px 60px 20px 20px;
+    line-height: 40px;
+    text-transform: uppercase; }
+    .top-bar .profile-box i {
+      float: right;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 26px;
+      position: relative; }
+      .top-bar .profile-box i span {
+        position: absolute;
+        font-family: sans-serif;
+        background-color: red;
+        display: block;
+        font-size: 10px;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        text-align: center;
+        top: 2px;
+        right: 15px;
+        border-radius: 3px; }
+
+.content-view {
+  height: 100%;
+  margin-left: 250px;
+  background-color: #F0EFEF;
+  padding-top: 114px;
+  padding-right: 47px;
+  padding-left: 55px;
+  padding-bottom: 60px; }
+
+.article-filters {
+  height: 50px;
+  margin-bottom: 34px;
+  text-transform: uppercase;
+  width: 100%;
+  color: #B5B4B4; }
+  .article-filters h1 {
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    float: left; }
+  .article-filters .filter-selector {
+    position: relative;
+    margin-left: 30px;
+    padding-left: 20px;
+    display: inline-block;
+    border-left: 1px solid #B5B4B4; }
+    .article-filters .filter-selector .selected-filter {
+      color: #000;
+      font-size: 24px; }
+      .article-filters .filter-selector .selected-filter i {
+        color: #B5B4B4;
+        font-size: 18px;
+        padding-left: 10px;
+        display: inline; }
+  .article-filters .layout {
+    float: right;
+    font-size: 30px;
+    line-height: 50px; }
+    .article-filters .layout i {
+      padding-left: 10px;
+      padding-right: 10px; }
+
+.article-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%; }
+
+.article {
+  background-color: #fff;
+  box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin: 5px;
+  flex: 20;
+  min-width: 25%; }
+  .article .titleArea {
+    text-transform: uppercase;
+    padding: 30px 30px 0px 30px; }
+    .article .titleArea h2.title {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 0px; }
+  .article.featured {
+    flex: 27; }
+    .article.featured .titleArea {
+      position: relative;
+      height: 220px;
+      color: #fff;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      background-color: #393D40;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px; }
+      .article.featured .titleArea span {
+        z-index: 99; }
+      .article.featured .titleArea h2.title {
+        margin-bottom: 0px;
+        z-index: 99; }
+    .article.featured .titleArea::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9; }
+  .article .excerpt {
+    padding: 30px;
+    line-height: 1.5em; }
+    .article .excerpt .readMore {
+      display: block;
+      width: 200px;
+      height: 15px;
+      line-height: 15px;
+      padding: 15px;
+      text-align: center;
+      margin: auto;
+      margin-top: 20px;
+      border: 2px solid #F0EFEF;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #393D40;
+      font-weight: 700;
+      text-transform: uppercase; }
+
+/*
+.view-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/design.png") top center no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: 9999;
+}
+*/
 html, body {
   font-family: 'Roboto', sans-serif;
   width: 100%;

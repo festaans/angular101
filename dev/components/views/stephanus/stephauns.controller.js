@@ -7,4 +7,10 @@ app.controller('stephanusController',['$scope', 'loadUser', 'loadArticles', func
   loadArticles.success(function(data) {
       $scope.articles = data.articles;
   });
+
+  $scope.isFeatured = function(image){
+    if (image != "") {
+      return "featured";
+    }
+  };
 }]);
