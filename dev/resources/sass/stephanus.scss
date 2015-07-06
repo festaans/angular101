@@ -187,15 +187,33 @@ $baseBorderRadius: 6px;
     font-size: 30px;
     line-height: 50px;
     i {
+      cursor: pointer;
       padding-left: 10px;
       padding-right: 10px;
+      &.active {
+        color: $darkGrey;
+      }
     }
   }
 }
 .article-container {
   display: flex;
-  flex-flow: row wrap;
   width: 100%;
+  &.grid {
+    flex-direction: row;
+    flex-flow: wrap;
+  }
+  &.list {
+    flex-direction: column;
+    .article {
+      .excerpt {
+        .readMore {
+          margin: inherit;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
 }
 .article {
   background-color: #fff;

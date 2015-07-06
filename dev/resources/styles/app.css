@@ -152,13 +152,23 @@
     font-size: 30px;
     line-height: 50px; }
     .article-filters .layout i {
+      cursor: pointer;
       padding-left: 10px;
       padding-right: 10px; }
+      .article-filters .layout i.active {
+        color: #1E2327; }
 
 .article-container {
   display: flex;
-  flex-flow: row wrap;
   width: 100%; }
+  .article-container.grid {
+    flex-direction: row;
+    flex-flow: wrap; }
+  .article-container.list {
+    flex-direction: column; }
+    .article-container.list .article .excerpt .readMore {
+      margin: inherit;
+      margin-top: 20px; }
 
 .article {
   background-color: #fff;

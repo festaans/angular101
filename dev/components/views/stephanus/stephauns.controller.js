@@ -1,6 +1,10 @@
 app.controller('stephanusController',['$scope', 'loadUser', 'loadArticles', function($scope, loadUser, loadArticles) {
   $scope.user = "";
   $scope.articles = "";
+  $scope.gridLayout = "active";
+  $scope.listLayout = "inactive";
+  $scope.articleLayout = "grid";
+
   loadUser.success(function(data) {
       $scope.user = data.user;
   });
@@ -12,5 +16,15 @@ app.controller('stephanusController',['$scope', 'loadUser', 'loadArticles', func
     if (image != "") {
       return "featured";
     }
+  };
+  $scope.layoutGrid = function() {
+    $scope.gridLayout = "active";
+    $scope.listLayout = "inactive";
+    $scope.articleLayout = "grid";
+  };
+  $scope.layoutList = function() {
+    $scope.gridLayout = "inactive";
+    $scope.listLayout = "active";
+    $scope.articleLayout = "list";
   };
 }]);

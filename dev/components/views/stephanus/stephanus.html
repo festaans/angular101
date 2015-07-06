@@ -45,11 +45,11 @@
         </div>
       </div>
       <div class="layout">
-        <i class="icon ion-android-apps"></i>
-        <i class="icon ion-android-menu"></i>
+        <i class="icon ion-android-apps" ng-click="layoutGrid()" ng-class="gridLayout"></i>
+        <i class="icon ion-android-menu" ng-click="layoutList()" ng-class="listLayout"></i>
       </div>
     </div>
-    <div class="article-container">
+    <div class="article-container" ng-class="articleLayout">
       <div class="article" ng-repeat="article in articles" ng-class="isFeatured(article.featuredImage)">
         <div class="titleArea" style="background-image: url({{article.featuredImage}});">
           <span>{{article.category}}</span>
