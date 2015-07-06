@@ -1,4 +1,40 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+.flex2 {
+  flex: 2; }
+
+.articleContainer {
+  flex-flow: row wrap;
+  background-color: #F0EFEF; }
+
+.articleContainer md-card {
+  flex-basis: 33%; }
+
+.pizzafat {
+  background-color: #FCBB53; }
+
+.items {
+  flex-flow: column wrap; }
+
+.rightToolbar {
+  background-color: #363C47; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap; }
+
+.flex-item {
+  height: 150px;
+  margin: 15px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 33%; }
+
+.tabs {
+  font-color: gray; }
+
 html, body {
   font-family: 'Roboto', sans-serif;
   width: 100%;

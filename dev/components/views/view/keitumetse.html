@@ -1,29 +1,123 @@
-<!--
-      <div>
+<div class="view" layout="row" flex>
+<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z1"
+               md-component-id="left"
+               md-is-locked-open="$mdMedia('gt-sm')">
 
-        <h2>Something like dizzz maybe</h2>
+   <md-toolbar class="md-whiteframe-z1 pizzafat">
+     Pizza Fat
+   </md-toolbar>
 
-      </div>
+   <md-list class="items" layout="column">
 
--->
-<div>
-      <md-toolbar layout="row">
-        <div class="md-toolbar-tools">
-          <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
-            <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
-          </md-button>
-          <h1>Something like dizzz oooo</h1>
-        </div>
-      </md-toolbar>
+     <md-list-item>
+         <md-button>
+           Overview
+         </md-button>
+         <md-button>
+           Sales
+         </md-button>
+         <md-button>
+           Suppliers
+         </md-button>
+         <md-button>
+           News
+         </md-button>
+         <md-button>
+           Calendar
+         </md-button>
 
-      <div layout="row" flex>
-          <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+     </md-list-item>
 
-          </md-sidenav>
-          <div layout="column" flex id="content">
-              <md-content layout="column" flex class="md-padding">
+   </md-list>
 
-              </md-content>
-          </div>
-      </div>
+ </md-sidenav>
+
+
+ <div flex tabIndex="-1" role="main" class="content">
+
+   <md-toolbar layout="row" class="md-whiteframe-z1 rightToolbar" >
+     <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+       <md-icon md-svg-icon="menu" ></md-icon>
+     </md-button>
+
+
+     <div class="md-toolbar-tools">
+       <md-button class="md-icon-button" aria-label="Settings">
+  <!--       <md-icon md-svg-icon="img/icons/menu.svg"></md-icon> -->
+
+         <ng-md-icon icon="search" size="16px" style="fill: gray" > |search</ng-md-icon>
+         <ng-md-icon icon="settings" size="16px"style="fill: gray"></ng-md-icon>
+         <ng-md-icon icon="notifications" size="14px"style="fill: gray"></ng-md-icon>
+
+         <span flex></span>
+       </md-button>
+   </div>
+
+   </md-toolbar>
+
+   <md-content class="md-padding articleContainer" flex layout="row">
+
+     <div>
+
+
+     <script type="text/ng-template" id="partials/view1.html">  View1 </script>
+     <script type="text/ng-template" id="partials/view2.html">  View2 </script>
+     <script type="text/ng-template" id="partials/view3.html">  View3</script>
+     <script type="text/ng-template" id="partials/view4.html">  View4</script>
+
+    <div>
+     <md-tabs md-stretch-tabs
+         md-selected="selectedIndex"  class="tabs">
+     <md-tab> <a href="#/view1">News   |</a> </md-tab>
+     <md-tab>  <a href="#/view2">Worldwide   |</a> </md-tab>
+     <md-tab>  <a href="#/view3">Last 24 hours   |</a> </md-tab>
+     <md-tab>  <a href="#/view4">Direct mentions   |</a> </md-tab>
+
+     </md-tabs>
+
+         <ng-md-icon icon="apps" size="16px" style="fill: gray" ></ng-md-icon>
+         <ng-md-icon icon="menu" size="16px" style="fill: gray" ></ng-md-icon>
+    </div>
+
+
+
+<!--<div id="content" ng-view flex> </div> -->
+
+
+
+<ul>
+   <md-card flex class="flex2 flex-item1">
+     <img ng-src="angular101/resources/pizza.jpg" class="md-card-image" alt="picture here">
+     <md-card-content>
+       <h2 class="md-title"></h2>
+       <p>
+         ....................
+       </p>
+     </md-card-content>
+     <div class="md-actions" layout="row" layout-align="end center">
+       <md-button>Read more</md-button>
+
+     </div>
+   </md-card>
+
+   <md-card class="flex-item" flex>
+   </md-card>
+
+   <md-card class="flex-item" flex>
+   </md-card>
+
+
+   <md-card class="flex-item" flex>
+   </md-card>
+   <md-card class="flex-item" flex>
+   </md-card>
+
+</ul>
+
 </div>
+   </md-content>
+
+
+
+ </div>
+ </div>

@@ -55,20 +55,19 @@ gulp.task('createAppJS', function() {
     './dev/**/stateProvider.end.js',
     './dev/**/*.factory.js',
     './dev/**/*.controller.js'
-
+  ])
   .pipe(concat('app.js'))
   .pipe(gulp.dest('./dev/scripts/'))
   .pipe(connect.reload());
 });
 gulp.task('createAngularExtentions', function() {
   gulp.src([
-    './dev/bower_components/angular-ui-router/release/angular-ui-router.js'
-    './dev/bower_components/angular-material/angular-material.min.js'
+    './dev/bower_components/angular-ui-router/release/angular-ui-router.js',
+    './dev/bower_components/angular-material/angular-material.js'
   ])
-  ])
+
   .pipe(concat('angular-extentions.js'))
-  .pipe(gulp.dest('./dev/scripts/'))
-  .pipe(connect.reload());
+  .pipe(gulp.dest('./dev/scripts/'));
 });
 
 //Dist
